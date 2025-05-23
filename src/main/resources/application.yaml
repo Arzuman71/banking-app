@@ -20,3 +20,15 @@ spring:
   flyway:
     locations: classpath:db/migration
     baseline-on-migrate: true
+
+  #jwt
+jwt:
+  secret: 8074658237c236e39e96e909ac1abb25a3e1773b100096ad6877c439cd452c17
+  expiration: 6000000
+  header: Authorization
+
+#  swagger
+springdoc:
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
