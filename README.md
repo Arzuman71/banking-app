@@ -34,18 +34,77 @@ BankingApp — это простое и расширяемое backend-прил�
 
 ## Примеры запросов
 # Аутентификация
-POST /api/auth/login
+POST http://localhost:8080/api/auth/login
 
 {
 "email": "user@example.com",
 "password": "password123"
 }
 
+# переводить деньги
+POST http://localhost:8080/api/accounts/transfer
+{
+"value": "100",
+"transferTo": 2
+}
+
+# удалить электронную почту
+http://localhost:8080/api/emailData/3
+
+# изменить адрес электронной почты
+PUT http://localhost:8080/api/emailData
+{
+"id":3,
+"email":"test2@mail.com"
+}
+
+# добавить адрес электронной почты
+POST http://localhost:8080/api/emailData
+{
+"email":"test@mail.com"
+}
+
 # Добавление телефона
-POST /api/phones
+POST  http://localhost:8080/api/phoneData
 {
 "phone": "+1234567890"
 }
+
+# удалить телефон
+DELETE http://localhost:8080/api/phoneData/3
+
+# сменить телефон
+PUT http://localhost:8080/api/phoneData
+{
+"phone":"22222222",
+"id":3
+}
+
+# изменить данные пользователя
+PUT http://localhost:8080/api/users
+{
+"name": "test",
+"dateOfBirth":"1998-06-05",
+"password":"user"
+}
+# поиск пользователя
+POST http://localhost:8080/api/users/search
+{
+"name": "",
+"email": "",
+"phone": "",
+"dateOfBirth": "",
+"page": 0,
+"size": 0
+}
+
+
+
+
+
+
+
+
 
 👨‍💻 Разработчик
 Автор: Арзуман Кочоян
